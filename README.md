@@ -7,6 +7,7 @@
 
 ## What is pending
 
+* Create mockup pages
 * Create login page
 * Create password storage page
 
