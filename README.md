@@ -21,6 +21,7 @@
 ### Bryce Mao
 
 ### Cameron Sumida
+* Set up MongoDB and connect to app
 
 ### Alexander Jones
 * Create mockup for home page
