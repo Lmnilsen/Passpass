@@ -21,3 +21,7 @@
 ### Bryce Mao
 
 ### Cameron Sumida
+
+### Alexander Jones
+* Create mockup for home page
+* Create mockup for password storage page
