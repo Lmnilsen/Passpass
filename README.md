@@ -13,6 +13,7 @@
 
 ### Lise Marie Nilsen
 * Set up git repo
+* Create mockup page for login page
 
 ### Kirsten-Elise Rensaa
 * Created README file
