@@ -1,5 +1,5 @@
-using BookStoreApi.Models;
-using BookStoreApi.Services;
+using PassPass.Models;
+using PassPass.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

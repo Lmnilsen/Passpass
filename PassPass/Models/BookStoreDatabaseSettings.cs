@@ -1,4 +1,4 @@
-namespace BookStoreApi.Models;
+namespace PassPass.Models;
 
 public class BookStoreDatabaseSettings
 {

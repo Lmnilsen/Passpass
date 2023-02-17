@@ -1,8 +1,8 @@
-using BookStoreApi.Models;
-using BookStoreApi.Services;
+using PassPass.Models;
+using PassPass.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookStoreApi.Controllers;
+namespace PassPass.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
