@@ -23,6 +23,7 @@ https://user-images.githubusercontent.com/60347864/220219661-675d54ec-8acc-4744-
 * Implemented and tested out Roslynator
 
 ### Bryce Mao
+* Set up test collections with MongoDb 
 
 ### Cameron Sumida
 * Set up MongoDB and connect to app
