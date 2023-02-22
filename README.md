@@ -8,6 +8,12 @@
 Login page mockup:
 https://user-images.githubusercontent.com/60347864/220219661-675d54ec-8acc-4744-bd60-aa6b37d23d75.png
 
+Home page mockup:
+https://github.com/Lmnilsen/Passpass/blob/main/mockups/Home%20Page%20Mockup.png
+
+Passwords page mockup:
+https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
+
 
 ## What is pending
 * Create login page
@@ -29,5 +35,5 @@ https://user-images.githubusercontent.com/60347864/220219661-675d54ec-8acc-4744-
 * Set up MongoDB and connect to app
 
 ### Alexander Jones
-* Create mockup for home page
-* Create mockup for password storage page
+* Created mockup for home page
+* Created mockup for password storage page
