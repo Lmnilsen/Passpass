@@ -27,9 +27,9 @@ export class MongoTest extends Component {
           {books.map(book =>
             <tr key={book.id}>
               <td>{book.Name}</td>
-              <td>{book.Price}</td>
-              <td>{book.Category}</td>
-              <td>{book.Author}</td>
+              <td>{book.price}</td>
+              <td>{book.category}</td>
+              <td>{book.author}</td>
             </tr>
           )}
         </tbody>
@@ -53,7 +53,9 @@ export class MongoTest extends Component {
 
   async getBookData() {
     const response = await fetch('api/books');
+    console.log(response);
     const data = await response.json();
+    console.log(data);
     this.setState({ books: data, loading: false });
   }
 }
