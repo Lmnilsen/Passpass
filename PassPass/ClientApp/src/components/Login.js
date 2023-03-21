@@ -1,4 +1,9 @@
 import React, { Component, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Form, Card, Col, Container } from 'react-bootstrap';
+import { Row } from 'reactstrap';
+// import { Col, Form } from 'react-bootstrap';
+
 
 export class Login extends Component {
 
@@ -35,8 +40,70 @@ export class Login extends Component {
   render() {
     return (
       <div>
-        <h2>Login</h2>
-        <form onSubmit={this.handleSubmit}>
+        <h2 class = "text-center">Login</h2>
+          <Form>
+            <Row className="justify-content-center">
+          <Col xs={5}>
+          <Card >
+          <Card.Body>
+            {/* Email input */}
+          <div class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" />
+            <label class="form-label" for="form2Example1">Email address</label>
+          </div>
+          
+
+          {/* Password input */}
+          <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" />
+            <label class="form-label" for="form2Example2">Password</label>
+          </div>
+
+          {/* 2 column grid layout for inline styling */}
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              {/* Checkbox */}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+              </div>
+            </div>
+
+            <div class="col">
+              {/* Simple link */}
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+
+           {/* Submit button */}
+          <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+          {/* Register buttons */}
+          <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+          </Card.Body>
+          </Card>
+          </Col>
+          </Row>
+        </Form>
+        {/* <form onSubmit={this.handleSubmit}>
           <label>
             Username:
             <input
@@ -57,7 +124,7 @@ export class Login extends Component {
           <br />
           <button type="submit">Login</button>
           {this.state.errorMessage && <p>{this.state.errorMessage}</p>}
-        </form>
+        </form> */}
       </div>
 
     );
