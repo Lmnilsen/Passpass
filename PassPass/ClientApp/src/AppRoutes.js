@@ -1,7 +1,8 @@
-import { Counter } from "./components/Counter";
+import { About } from "./components/About";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { MongoTest } from "./components/MongoTest";
+import { Login } from "./components/Login";
 
 const AppRoutes = [
   {
@@ -9,8 +10,8 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: '/counter',
-    element: <Counter />
+    path: '/about',
+    element: <About />
   },
   {
     path: '/fetch-data',
@@ -18,7 +19,11 @@ const AppRoutes = [
   },
   {
     path: '/book-mongo',
-    element: <MongoTest />
+    element: <MongoTest/>
+  },
+  {
+    path: '/login',
+    element: <Login />
   }
 ];
 
