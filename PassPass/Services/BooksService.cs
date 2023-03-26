@@ -1,3 +1,4 @@
+using System;
 using PassPass.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -12,7 +13,7 @@ public class BooksService
         IOptions<BookStoreDatabaseSettings> bookStoreDatabaseSettings)
     {
         var mongoClient = new MongoClient(
-            bookStoreDatabaseSettings.Value.ConnectionString);
+            Environment.GetEnvironmentVariable("MONGO_URL"));
 
         var mongoDatabase = mongoClient.GetDatabase(
             bookStoreDatabaseSettings.Value.DatabaseName);

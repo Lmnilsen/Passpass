@@ -56,6 +56,7 @@ export class MongoTest extends Component {
     console.log(response);
     const data = await response.json();
     console.log(data);
+    //console.log(Environment.GetEnvironmentVariable("MONGO_URL"));
     this.setState({ books: data, loading: false });
   }
 }
