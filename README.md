@@ -37,8 +37,11 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Next: create password storage page
 
 ### Kirsten-Elise Rensaa
-* Created README file
-* Implemented and tested out Roslynator
+* Create README file
+* Implement and test out Roslynator
+* Create login page
+* Link login page to navbar
+* Next: add login functionality and connect it with the password page
 
 ### Bryce Mao
 * Set up test collections with MongoDb 
