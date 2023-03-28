@@ -18,16 +18,23 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 ## Progress since last assignment
 * Created MongoDB server
 * Connected app to MongoDB server
+* Create home page
+* Create about page
+* Update navbar
+
 
 ## What is pending
-* Create login page
-* Create home page
 * Create password storage page
+* Add login functionailty and connect it with the password page
 * Create MongoDB collections
+* Add information in the about page
 
 ### Lise Marie Nilsen
 * Set up git repo
 * Create mockup page for login page
+* Implement home mockup page
+* Update navbar
+* Next: create password storage page
 
 ### Kirsten-Elise Rensaa
 * Created README file
