@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
+function validateForm() {
+  console.log("Clicked")
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
+
 export class MongoTest extends Component {
   static displayName = MongoTest.name;
-
+  
   constructor(props) {
     super(props);
     this.state = { books: [], loading: true };
@@ -44,10 +53,20 @@ export class MongoTest extends Component {
 
     return (
       <div>
-        <h1 id="tabelLabel" >Books</h1>
+        <h1 id="tabelLabel">Books</h1>
         <p>This component demonstrates fetching book data from the server.</p>
         {contents}
+        <div class="form-outline mb-4">
+            <input type="website" id="form2Example1" class="form-control" />
+            <label class="form-label" htmlFor="form2Example1">Website</label>
+          </div>
+          <div class="form-outline mb-4" name="myForm" onSubmit={validateForm()}>
+          Password: <input type="text" name="fname" required/>
+            <input type="submit" value="Submit"></input>
+          </div>
+          
       </div>
+       
     );
   }
 
