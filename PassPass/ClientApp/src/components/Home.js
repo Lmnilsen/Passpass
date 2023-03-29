@@ -1,11 +1,48 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
+// import Iroh from 'iroh';
+// import 'iroh';
+
+  function irohTest() {
+  const Iroh = require("iroh");
+  console.log(Iroh);
+  console.log(Iroh.Stage);
+
+  // Function originally called irohTestBody()
+  let stage = new Iroh.Stage(`
+    // Project Euler Problem #1
+    // Find sum of all multiples of 3 or 5 below 1000
+    var sum = 0;
+    for  (var i = 0; i < 1000; i++)
+    {
+      if (i % 3 === 0 || i % 5 === 0)
+      {
+        sum += i;
+      }
+    }
+    console.log(sum);`);
+
+
+    // First, we need to create a "stage", a block of code for Iroh to monitor
+    // let testBody = irohTestBody.toString();
+    // console.log(testBody);
+    // let stage = new Iroh.Stage(testBody);
+
+    let listener = stage.addListener(Iroh.VAR);
+    listener.on("after", (e) => {
+      console.log(e.name, "=>", e.value);
+    });
+
+    // eval is an unsafe function - okay here since we're using our own prewritten code
+    // But should still be reevaluated before final release
+    eval(stage.script);
+  };
 
 export class Home extends Component {
   static displayName = Home.name;
 
   render() {
-    return (
+   return (
       <div className='mt-5' style={{ textAlign: 'center' }}>
         <div style={{ fontSize: '62px', textAlign: 'center' }}>
           <h1 className='display-1 text-center'> PassPass </h1>
@@ -26,7 +63,9 @@ export class Home extends Component {
           <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
         </ul>
         <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p> */}
+	{irohTest()}
       </div>
-    );
-  }
+   )
+}
+
 }
