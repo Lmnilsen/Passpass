@@ -45,6 +45,9 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 
 ### Bryce Mao
 * Set up test collections with MongoDb 
+* Attempted to setup SQL server and connect to app
+* Added forms and buttons to add items to the MongoDb collections
+* Next: Add button functionality so it's able to add items to the collections
 
 ### Cameron Sumida
 * New completions
