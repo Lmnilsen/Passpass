@@ -58,3 +58,6 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 ### Alexander Jones
 * Created mockup for home page
 * Created mockup for password storage page
+* Created report for Implementation & Verification
+* Started implementating Dynamic Analysis
+* Next: Finish implementing Dynamic Analysis
