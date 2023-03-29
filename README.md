@@ -50,12 +50,10 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Next: Add button functionality so it's able to add items to the collections
 
 ### Cameron Sumida
-* New completions
-  * Set up MongoDB and connect to app
-* Current
-  * Set up MongoDB collections
-* Next
-  * Remove unused file and pages
+* Set up remote MongoDB server
+* Connected server to app
+* Working on setting up MongoDB collections
+* Next: Remove unused file and pages
 
 ### Alexander Jones
 * Created mockup for home page
