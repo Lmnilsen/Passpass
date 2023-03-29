@@ -3,6 +3,68 @@ import React, { Component } from 'react';
 // import Iroh from 'iroh';
 // import 'iroh';
 
+  function officialTest()
+  {
+	const Iroh = require("iroh");
+
+let stage = new Iroh.Stage(`
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+};
+factorial(3);
+`);
+
+// function call
+stage.addListener(Iroh.CALL)
+.on("before", (e) => {
+  let external = e.external ? "#external" : "";
+  console.log(" ".repeat(e.indent) + "call", e.name, external, "(", e.arguments, ")");
+  //console.log(e.getSource());
+})
+.on("after", (e) => {
+  let external = e.external ? "#external" : "";
+  console.log(" ".repeat(e.indent) + "call", e.name, "end", external, "->", [e.return]);
+  //console.log(e.getSource());
+});
+
+// function
+stage.addListener(Iroh.FUNCTION)
+.on("enter", (e) => {
+  let sloppy = e.sloppy ? "#sloppy" : "";
+  if (e.sloppy) {
+    console.log(" ".repeat(e.indent) + "call", e.name, sloppy, "(", e.arguments, ")");
+    //console.log(e.getSource());
+  }
+})
+.on("leave", (e) => {
+  let sloppy = e.sloppy ? "#sloppy" : "";
+  if (e.sloppy) {
+    console.log(" ".repeat(e.indent) + "call", e.name, "end", sloppy, "->", [void 0]);
+    //console.log(e.getSource());
+  }
+})
+.on("return", (e) => {
+  let sloppy = e.sloppy ? "#sloppy" : "";
+  if (e.sloppy) {
+    console.log(" ".repeat(e.indent) + "call", e.name, "end", sloppy, "->", [e.return]);
+    //console.log(e.getSource());
+  }
+});
+
+// program
+stage.addListener(Iroh.PROGRAM)
+.on("enter", (e) => {
+  console.log(" ".repeat(e.indent) + "Program");
+})
+.on("leave", (e) => {
+  console.log(" ".repeat(e.indent) + "Program end", "->", e.return);
+});
+
+eval(stage.script);
+
+  }
+
   function irohTest() {
   const Iroh = require("iroh");
   console.log(Iroh);
@@ -63,7 +125,7 @@ export class Home extends Component {
           <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
         </ul>
         <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p> */}
-	{irohTest()}
+	{officialTest()}
       </div>
    )
 }
