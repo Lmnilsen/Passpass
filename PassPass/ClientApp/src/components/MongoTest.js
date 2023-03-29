@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 function validateForm() {
-  console.log("Clicked")
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
-    alert("Password must be filled out");
-    return false;
-  }
+  //if(document.forms["myForm"]["fname"].value === undefined){
+    //return
+  //}
+  //var x = document.elements("password").value;
+  //console.log(x)
 }
 
 export class MongoTest extends Component {
@@ -56,14 +55,10 @@ export class MongoTest extends Component {
         <h1 id="tabelLabel">Books</h1>
         <p>This component demonstrates fetching book data from the server.</p>
         {contents}
-        <div class="form-outline mb-4">
-            <input type="website" id="form2Example1" class="form-control" />
-            <label class="form-label" htmlFor="form2Example1">Website</label>
-          </div>
-          <div class="form-outline mb-4" name="myForm" onSubmit={validateForm()}>
-          Password: <input type="text" name="fname" required/>
-            <input type="submit" value="Submit"></input>
-          </div>
+        <form action={validateForm()} id="myForm">
+  Password: <input type="text" name="password" required></input>
+  <input type="submit" value="Submit" ></input>
+  </form>
           
       </div>
        
