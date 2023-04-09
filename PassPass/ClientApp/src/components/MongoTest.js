@@ -13,11 +13,12 @@ export class MongoTest extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { books: [], loading: true };
+    this.state = { books: [], passwords: [], loading: true, loading2: true };
   }
 
   componentDidMount() {
     this.getBookData();
+    this.getPasswordData();
   }
 
   static renderBooksTable(books) {
@@ -45,16 +46,48 @@ export class MongoTest extends Component {
     );
   }
 
+  static renderPasswordsTable(passwords) {
+    return (
+      <table className='table table-striped' aria-labelledby="tabelLabe2">
+        <thead>
+          <tr>
+            <tr>App User</tr>
+            <th>Username</th>
+            <th>Website</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {passwords.map(password =>
+            <tr key={password.id}>
+              <td>{password.appUsername}</td>
+              <td>{password.websiteUsername}</td>
+              <td>{password.website}</td>
+              <td>{password.password}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    );
+  }
+
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
       : MongoTest.renderBooksTable(this.state.books);
+
+    let contents2 = this.state.loading2
+      ? <p><em>Loading...</em></p>
+      : MongoTest.renderPasswordsTable(this.state.passwords);  
 
     return (
       <div>
         <h1 id="tabelLabel">Books</h1>
         <p>This component demonstrates fetching book data from the server.</p>
         {contents}
+        <h1 id="tabe2Label">Passwords</h1>
+        <p>This component demonstrates a mockup of the password table.</p>
+        {contents2}
         <form action={validateForm()} id="myForm">
   Password: <input type="text" name="password" required></input>
   <input type="submit" value="Submit" ></input>
@@ -72,5 +105,13 @@ export class MongoTest extends Component {
     console.log(data);
     //console.log(Environment.GetEnvironmentVariable("MONGO_URL"));
     this.setState({ books: data, loading: false });
+  }
+  async getPasswordData() {
+    const response = await fetch('api/passwords');
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    //console.log(Environment.GetEnvironmentVariable("MONGO_URL"));
+    this.setState({ passwords: data, loading2: false });
   }
 }
