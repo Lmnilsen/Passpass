@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
 
-function validateForm() {
-  //if(document.forms["myForm"]["fname"].value === undefined){
-    //return
-  //}
-  //var x = document.elements("password").value;
-  //console.log(x)
-}
 
 export class MongoTest extends Component {
   static displayName = MongoTest.name;
@@ -71,6 +64,30 @@ export class MongoTest extends Component {
     );
   }
 
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const appUsername = "testuser1";
+    const website = event.target.website.value;
+    const username = event.target.username.value;
+    const password = event.target.password.value;
+    console.log(`Website: ${website}, Username: ${username}, Password: ${password}`);
+  
+    const response = await fetch('/api/passwords', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({appUsername, website: website,  websiteUsername: username, password: password })
+    });
+  
+    if (response.ok) {
+      // reload the passwords table after successful insertion
+      await this.getPasswordData();
+    } else {
+      console.error(`Failed to insert password: ${response.status} - ${response.statusText}`);
+    }
+  };
+
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
@@ -88,11 +105,14 @@ export class MongoTest extends Component {
         <h1 id="tabe2Label">Passwords</h1>
         <p>This component demonstrates a mockup of the password table.</p>
         {contents2}
-        <form action={validateForm()} id="myForm">
-  Password: <input type="text" name="password" required></input>
-  <input type="submit" value="Submit" ></input>
-  </form>
-          
+        
+ 
+        <form id="myForm" onSubmit={this.handleSubmit}>
+  Website: <input type="text" name="website"  required></input>
+  Website Username: <input type="text" name="username" required></input>
+  Password: <input type="text" id="password" required></input>
+  <button type="submit" onclick="DesperateTest()" >Submit</button>
+  </form> 
       </div>
        
     );
@@ -115,3 +135,4 @@ export class MongoTest extends Component {
     this.setState({ passwords: data, loading2: false });
   }
 }
+
