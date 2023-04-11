@@ -11,6 +11,11 @@ builder.Services.Configure<BookStoreDatabaseSettings>(
 
 builder.Services.AddSingleton<BooksService>();
 
+builder.Services.Configure<PasswordDataDatabaseSettings>(
+    builder.Configuration.GetSection("PasswordDataDatabase"));
+
+builder.Services.AddSingleton<PasswordsService>();
+
 //builder.Services.AddControllers()
 
 builder.Services.AddControllersWithViews();
