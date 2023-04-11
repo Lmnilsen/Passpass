@@ -57,6 +57,7 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Implement and test out Roslynator
 * Create login page
 * Link login page to navbar
+* Update About page
 * Next: add login functionality and connect it with the password page
 
 ### Lise Marie Nilsen
