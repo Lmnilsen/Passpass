@@ -15,33 +15,30 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/Home%20Page%20Mockup.png
 Passwords page mockup:
 https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 
-## Progress since last assignment
+## Current progress
 * Created MongoDB server
 * Connected app to MongoDB server
-* Create home page
-* Create about page
+* Created login page
+* Created home page
+* Created about page
+* Created password storage page
 * Update navbar
 
 
 ## What is pending
-* Create password storage page
+* Add login database
+* Add functionality for creating new user
 * Add login functionailty and connect it with the password page
 * Create MongoDB collections
 * Add information in the about page
 
-### Lise Marie Nilsen
-* Set up git repo
-* Create mockup page for login page
-* Implement home mockup page
-* Update navbar
-* Next: create password storage page
 
-### Kirsten-Elise Rensaa
-* Create README file
-* Implement and test out Roslynator
-* Create login page
-* Link login page to navbar
-* Next: add login functionality and connect it with the password page
+### Alexander Jones
+* Created mockup for home page
+* Created mockup for password storage page
+* Created report for Implementation & Verification
+* Started implementating Dynamic Analysis
+* Next: Finish implementing Dynamic Analysis
 
 ### Bryce Mao
 * Set up test collections with MongoDb 
@@ -55,9 +52,17 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Working on setting up MongoDB collections
 * Next: Remove unused file and pages
 
-### Alexander Jones
-* Created mockup for home page
-* Created mockup for password storage page
-* Created report for Implementation & Verification
-* Started implementating Dynamic Analysis
-* Next: Finish implementing Dynamic Analysis
+### Kirsten-Elise Rensaa
+* Create README file
+* Implement and test out Roslynator
+* Create login page
+* Link login page to navbar
+* Next: add login functionality and connect it with the password page
+
+### Lise Marie Nilsen
+* Set up git repo
+* Create mockup page for login page
+* Implement home mockup page
+* Update navbar
+* Create password storage page
+* Next: work on the login functionality
