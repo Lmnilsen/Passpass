@@ -35,6 +35,9 @@ export class NavMenu extends Component {
               <NavItem>
                 <NavLink tag={Link} className="text-dark fs-4" to="/about">About</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} className="text-dark fs-4" to="/passwords">Passwords</NavLink>
+              </NavItem>
             </ul>
           </Collapse>
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
@@ -42,9 +45,7 @@ export class NavMenu extends Component {
               <NavItem>
                 <NavLink tag={Link} className="text-dark fs-4" to="/login">Login</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/book-mongo">Mongo Test</NavLink>
-              </NavItem>
+              
             </ul>
           </Collapse>
         </Navbar>

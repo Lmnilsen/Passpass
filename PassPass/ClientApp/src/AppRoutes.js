@@ -1,7 +1,7 @@
 import { About } from "./components/About";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
-import { MongoTest } from "./components/MongoTest";
+import { Passwords } from "./components/Passwords";
 import { Login } from "./components/Login";
 
 const AppRoutes = [
@@ -18,8 +18,8 @@ const AppRoutes = [
     element: <FetchData />
   },
   {
-    path: '/book-mongo',
-    element: <MongoTest/>
+    path: '/passwords',
+    element: <Passwords/>
   },
   {
     path: '/login',
