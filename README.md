@@ -37,8 +37,10 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Created mockup for home page
 * Created mockup for password storage page
 * Created report for Implementation & Verification
-* Started implementating Dynamic Analysis
-* Next: Finish implementing Dynamic Analysis
+* Continued report for Verification
+* Conducted Fuzz Testing
+* Still working on Dynamic Analysis
+* Explore feasibility of encrypting user's passwords using their main login password
 
 ### Bryce Mao
 * Set up test collections with MongoDb 
