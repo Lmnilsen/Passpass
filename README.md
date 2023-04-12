@@ -49,8 +49,9 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 ### Cameron Sumida
 * Set up remote MongoDB server
 * Connected server to app
-* Working on setting up MongoDB collections
-* Next: Remove unused file and pages
+* Set up password collection
+* Set up temporary password table
+* Next: Work on resolving Mongo connection issues
 
 ### Kirsten-Elise Rensaa
 * Create README file
