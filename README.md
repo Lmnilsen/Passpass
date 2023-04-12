@@ -44,7 +44,8 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Set up test collections with MongoDb 
 * Attempted to setup SQL server and connect to app
 * Added forms and buttons to add items to the MongoDb collections
-* Next: Add button functionality so it's able to add items to the collections
+* Added button functionality so that items in the text field are added to the Mongo collection
+* Next: implement ability to delete items from the collection
 
 ### Cameron Sumida
 * Set up remote MongoDB server
