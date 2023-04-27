@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 export class Passwords extends Component {
   static displayName = Passwords.name;
   
@@ -12,7 +11,7 @@ export class Passwords extends Component {
   componentDidMount() {
     this.getPasswordData();
   }
-
+  
   static renderPasswordsTable(passwords) {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabe2">
@@ -27,10 +26,10 @@ export class Passwords extends Component {
         <tbody>
           {passwords.map(password =>
             <tr key={password.id}>
-              <td>{password.appUsername}</td>
-              <td>{password.websiteUsername}</td>
-              <td>{password.website}</td>
-              <td>{password.password}</td>
+              <td>{password.appUsername.length > 30 ? `${password.appUsername.slice(0, 30)}...` : password.appUsername}</td>
+              <td>{password.websiteUsername.length > 30 ? `${password.websiteUsername.slice(0, 30)}...` : password.websiteUsername}</td>
+              <td>{password.website.length > 30 ? `${password.website.slice(0, 30)}...` : password.website}</td>
+              <td>{password.password.length > 30 ? `${password.password.slice(0, 30)}...` : password.password}</td>
             </tr>
           )}
         </tbody>
@@ -44,7 +43,7 @@ export class Passwords extends Component {
     const website = event.target.website.value;
     const username = event.target.username.value;
     const password = event.target.password.value;
-    console.log(`Website: ${website}, Username: ${username} , Password: ${password}`);
+    console.log(`Website: ${website}, Username: ${username}, Password: ${password}`);
   
     const response = await fetch('/api/passwords', {
       method: 'POST',
@@ -79,7 +78,8 @@ export class Passwords extends Component {
           Website: <input type="text" name="website" style={{marginRight: '20px'}}  required></input>
           Website Username: <input type="text" name="username" style={{marginRight: '20px'}} required></input>
           Password: <input type="text" id="password" required></input>
-          <button type="submit" onclick="DesperateTest()" >Submit</button>
+          <button type="submit">Submit</button>
+          {/* <button type="submit" onclick="DesperateTest()" >Submit</button> */}
         </form> 
       </div>
     );
