@@ -12,7 +12,7 @@ export class Passwords extends Component {
     this.getPasswordData();
   }
   
-  static renderPasswordsTable(passwords) {
+  static renderPasswordsTable(passwords, deletePassword) {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabe2">
         <thead>
@@ -30,6 +30,9 @@ export class Passwords extends Component {
               <td>{password.websiteUsername.length > 30 ? `${password.websiteUsername.slice(0, 30)}...` : password.websiteUsername}</td>
               <td>{password.website.length > 30 ? `${password.website.slice(0, 30)}...` : password.website}</td>
               <td>{password.password.length > 30 ? `${password.password.slice(0, 30)}...` : password.password}</td>
+              <td>
+                <button type="button" onClick={() => deletePassword(password.id)}>Delete</button>
+              </td>
             </tr>
           )}
         </tbody>
@@ -61,10 +64,22 @@ export class Passwords extends Component {
     }
   };
 
+  async deletePassword(id) {
+    const response = await fetch(`/api/passwords/${id}`, {
+      method: 'DELETE'
+    });
+  
+    if (response.ok) {
+      await this.getPasswordData();
+    } else {
+      console.error(`Failed to delete password: ${response.status} - ${response.statusText}`);
+    }
+  }
+
   render() {
     let contents2 = this.state.loading2
       ? <p><em>Loading...</em></p>
-      : Passwords.renderPasswordsTable(this.state.passwords);  
+      : Passwords.renderPasswordsTable(this.state.passwords, this.deletePassword);  
 
     return (
       <div>
