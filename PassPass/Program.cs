@@ -1,8 +1,6 @@
 using PassPass.Models;
 using PassPass.Services;
 
-DotNetEnv.Env.Load("./ClientApp/.env");
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
