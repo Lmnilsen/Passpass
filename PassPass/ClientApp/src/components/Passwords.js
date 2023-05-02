@@ -6,6 +6,7 @@ export class Passwords extends Component {
   constructor(props) {
     super(props);
     this.state = { passwords: [], loading2: true };
+    this.deletePassword = this.deletePassword.bind(this);
   }
 
   componentDidMount() {
