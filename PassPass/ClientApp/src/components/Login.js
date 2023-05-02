@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Form, Card, Col } from 'react-bootstrap';
 import { Row } from 'reactstrap';
-import { Navigate } from 'react-router-dom';
 
 export class Login extends Component {
 
@@ -26,13 +25,10 @@ export class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("login started");
-    // this.props.updateLoginStatus(true);
 
-    // perform login logic here
-    if (this.state.username === "exampleuser" && this.state.password === "examplepassword") {
+    if (this.state.username === "user1" && this.state.password === "password") {
       console.log("login successful");
-      this.props.updateLoginStatus(true); // Call the updateLoginStatus callback
-      Navigate('/passwords');
+      this.props.updateLoginStatus(true);
     } else {
       this.setState({ errorMessage: "Invalid username or password" });
     }
@@ -70,7 +66,6 @@ export class Login extends Component {
             </label>
           </div>
 
-          {/* 2 column grid layout for inline styling */}
           <div className="row mb-4">
             <div className="col d-flex justify-content-center">
               {/* Checkbox */}

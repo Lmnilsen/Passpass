@@ -76,20 +76,7 @@ export class Passwords extends Component {
     const { isLoggedIn } = this.props;
 
     let contents2;
-    if (loading2) {
-      contents2 = <p><em>Loading...</em></p>;
-    }
-
-    else if (isLoggedIn) {
-      contents2 = (
-        <div>
-          <p>An overview of the stored passwords.</p>
-          {Passwords.renderPasswordsTable(passwords)}
-        </div>
-      );
-    }
-
-    else {
+    if (! isLoggedIn){
       contents2 = (
         <div>
           <p>Please login to access the password site.</p>
@@ -98,6 +85,18 @@ export class Passwords extends Component {
             Password: <input type="password" name="password" required></input>
             <button type="submit">Login</button>
           </form> */}
+        </div>
+      );
+    }
+    else if (loading2) {
+      contents2 = <p><em>Loading...</em></p>;
+    }
+
+    else if (isLoggedIn) {
+      contents2 = (
+        <div>
+          <p>An overview of the stored passwords.</p>
+          {Passwords.renderPasswordsTable(passwords)}
         </div>
       );
     }
