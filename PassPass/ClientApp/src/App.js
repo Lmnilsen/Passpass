@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
@@ -19,11 +19,7 @@ export default class App extends Component {
   updateLoginStatus = (isLoggedIn) => {
     console.log("Her" + isLoggedIn);
     this.setState({ isLoggedIn });
-    const navigate = useNavigate();
-    navigate('/passwords');
-    // if (isLoggedIn) {
-    //   return <Navigate to="/passwords" />;
-    // }
+    this.props.history.push('/passwords');
   }
 
   render() {
