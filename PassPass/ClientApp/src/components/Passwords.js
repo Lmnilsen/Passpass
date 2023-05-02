@@ -6,32 +6,36 @@ export class Passwords extends Component {
   constructor(props) {
     super(props);
     this.state = { passwords: [], loading2: true, isLoggedIn: false };
+    this.deletePassword = this.deletePassword.bind(this);
   }
 
   componentDidMount() {
     this.getPasswordData();
   }
   
-  static renderPasswordsTable(passwords) {
+  static renderPasswordsTable(passwords, deletePassword) {
     return (
-      <div>
-        <table className='table table-striped' aria-labelledby="tabelLabe2">
-          <thead>
-            <tr>
-              <th>App User</th>
-              <th>Username</th>
-              <th>Website</th>
-              <th>Password</th>
+    <div>
+      <table className='table table-striped' aria-labelledby="tabelLabe2">
+        <thead>
+          <tr>
+            <th>App User</th>
+            <th>Username</th>
+            <th>Website</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {passwords.map(password =>
+            <tr key={password.id}>
+              <td>{password.appUsername.length > 30 ? `${password.appUsername.slice(0, 30)}...` : password.appUsername}</td>
+              <td>{password.websiteUsername.length > 30 ? `${password.websiteUsername.slice(0, 30)}...` : password.websiteUsername}</td>
+              <td>{password.website.length > 30 ? `${password.website.slice(0, 30)}...` : password.website}</td>
+              <td>{password.password.length > 30 ? `${password.password.slice(0, 30)}...` : password.password}</td>
+              <td>
+                <button type="button" onClick={() => deletePassword(password.id)}>Delete</button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {passwords.map(password =>
-              <tr key={password.id}>
-                <td>{password.appUsername.length > 30 ? `${password.appUsername.slice(0, 30)}...` : password.appUsername}</td>
-                <td>{password.websiteUsername.length > 30 ? `${password.websiteUsername.slice(0, 30)}...` : password.websiteUsername}</td>
-                <td>{password.website.length > 30 ? `${password.website.slice(0, 30)}...` : password.website}</td>
-                <td>{password.password.length > 30 ? `${password.password.slice(0, 30)}...` : password.password}</td>
-              </tr>
             )}
           </tbody>
         </table>
@@ -71,6 +75,18 @@ export class Passwords extends Component {
     }
   };
 
+  async deletePassword(id) {
+    const response = await fetch(`/api/passwords/${id}`, {
+      method: 'DELETE'
+    });
+  
+    if (response.ok) {
+      await this.getPasswordData();
+    } else {
+      console.error(`Failed to delete password: ${response.status} - ${response.statusText}`);
+    }
+  }
+
   render() {
     const { loading2, passwords } = this.state;
     const { isLoggedIn } = this.props;
@@ -96,7 +112,7 @@ export class Passwords extends Component {
       contents2 = (
         <div>
           <p>An overview of the stored passwords.</p>
-          {Passwords.renderPasswordsTable(passwords)}
+          {Passwords.renderPasswordsTable(passwords, this.deletePassword)}
         </div>
       );
     }

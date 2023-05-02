@@ -47,7 +47,8 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Attempted to setup SQL server and connect to app
 * Added forms and buttons to add items to the MongoDb collections
 * Added button functionality so that items in the text field are added to the Mongo collection
-* Next: implement ability to delete items from the collection
+* Implement ability to delete items from the collection
+* Table updates when user deletes an item from the collection without user having to refresh the page
 
 ### Cameron Sumida
 * Set up remote MongoDB server
@@ -71,3 +72,23 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Update navbar
 * Create password storage page
 * Next: work on the login functionality
+
+## Technical Notes
+
+### Installation Guide
+* Install [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/) and [.NET](https://dotnet.microsoft.com/en-us/download) on your computer.
+* Ensure MongoDB is connected to the correct port by running ``mongod --dbpath=<directory>``, where ``<directory>`` is the directory path to an empty folder.
+  * Example: ``mongod --dbpath=user/folder``.
+* Download a copy of the project and store it somewhere on your computer.
+* In a command prompt, cd into the innermost folder labeled PassPass, and run the command ``dotnet watch run``
+  * While running, a second command prompt will open.
+  * The first time you run it might takea little longer due to some packages being installed.
+* Once the command finishes, the app should open by itself in your browser.
+
+## Links
+Online Repository:
+https://github.com/Lmnilsen/Passpass
+
+Wiki:
+https://github.com/Lmnilsen/Passpass/wiki
+
