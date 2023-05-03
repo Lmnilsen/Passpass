@@ -1,16 +1,9 @@
 using PassPass.Models;
 using PassPass.Services;
 
-DotNetEnv.Env.Load("./ClientApp/.env");
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<BookStoreDatabaseSettings>(
-    builder.Configuration.GetSection("BookStoreDatabase"));
-
-builder.Services.AddSingleton<BooksService>();
-
 builder.Services.Configure<PasswordDataDatabaseSettings>(
     builder.Configuration.GetSection("PasswordDataDatabase"));
 

@@ -130,7 +130,6 @@ export class Passwords extends Component {
     console.log(response);
     const data = await response.json();
     console.log(data);
-    //console.log(Environment.GetEnvironmentVariable("MONGO_URL"));
     this.setState({ passwords: data, loading2: false });
   }
 }

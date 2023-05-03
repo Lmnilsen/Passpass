@@ -13,7 +13,8 @@ public class PasswordsService
         IOptions<PasswordDataDatabaseSettings> passwordDataDatabaseSettings)
     {
         var mongoClient = new MongoClient(
-            Environment.GetEnvironmentVariable("MONGO_URL"));
+            // Environment.GetEnvironmentVariable("MONGO_URL"));
+            passwordDataDatabaseSettings.Value.ConnectionString);
 
         var mongoDatabase = mongoClient.GetDatabase(
             passwordDataDatabaseSettings.Value.DatabaseName);
