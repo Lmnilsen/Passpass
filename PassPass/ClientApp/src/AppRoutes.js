@@ -10,6 +10,10 @@ const AppRoutes = [
     element: <Home />
   },
   {
+    path: '/',
+    element: <Home />
+  },
+  {
     path: '/about',
     element: <About />
   },
