@@ -91,6 +91,9 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 
 ## Closing thoughts
 
+Looking back on our project we have definitely overcome some hurdles. One of the issues we stagnated with the longest was to implement the database. This was an essential part of our product, and so it was not something we could compromise. Afted this was set up, the rest of the pieces started coming together. Ideally we would have implemented more features in regards to security, but we were unfortunately too short on time. We are happy with our choice of database as it provides encryption.
+
+
 ## Links
 Online Repository:
 https://github.com/Lmnilsen/Passpass
