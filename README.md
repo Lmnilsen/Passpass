@@ -91,7 +91,7 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 
 ## Closing thoughts
 
-Looking back on our project we have definitely overcome some hurdles. One of the issues we stagnated with the longest was to implement the database. This was an essential part of our product, and so it was not something we could compromise. Afted this was set up, the rest of the pieces started coming together. Ideally we would have implemented more features in regards to security, but we were unfortunately too short on time. We are happy with our choice of database as it provides encryption opportunities.
+Looking back on our project we have definitely overcome some hurdles. One of the issues we stagnated with the longest was to implement the database. This was an essential part of our product, and so it was not something we could compromise. Another source of challenges was implementing dynamic analysis. For JavaScript, one of our primary languages, we couldn't locate a modern dynamic analysis framework to use, as the only options available hadn't been maintained in many years. It seems that since the web browser already provides a solid dynamic debugging environment, there isn't much momentum for a solid dynamic analysis framework, as debugging is one of the tasks they help the most with. For C#, we were able to locate a modern and high quality dynamic analysis tool, but it required an enterprise subscription to Visual Studio, which we didn't have access to. After these issues however, the rest of the pieces started coming together. Ideally we would have implemented more features in regards to security, but we were unfortunately too short on time. We are happy with our choice of database as it provides encryption opportunities.
 
 
 ## Links
