@@ -22,6 +22,8 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Created home page
 * Created about page
 * Created password storage page
+* Add a row in the password table
+* Delete a row in the password table
 * Update navbar
 
 
@@ -30,7 +32,6 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Add functionality for creating new user
 * Add login functionailty and connect it with the password page
 * Create MongoDB collections
-* Add information in the about page
 
 
 ### Alexander Jones
