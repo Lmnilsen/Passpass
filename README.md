@@ -63,7 +63,7 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Create login page
 * Link login page to navbar
 * Update About page
-* Next: add login functionality and connect it with the password page
+* Create Wiki pages
 
 ### Lise Marie Nilsen
 * Set up git repo
