@@ -73,7 +73,6 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Implement home mockup page
 * Update navbar
 * Create password storage page
-* Next: work on the login functionality
 
 ## Technical Notes
 
