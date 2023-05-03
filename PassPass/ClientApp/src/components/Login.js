@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Form, Card, Col } from 'react-bootstrap';
@@ -13,7 +12,6 @@ export class Login extends Component {
       password: "",
       errorMessage: "",
     };
-
   }
 
   handleUsernameChange = (event) => {
@@ -26,10 +24,11 @@ export class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log("login started");
 
-    // perform login logic here
-    if (this.state.username === "exampleuser" && this.state.password === "examplepassword") {
+    if (this.state.username === "user1" && this.state.password === "password") {
       console.log("login successful");
+      this.props.updateLoginStatus(true);
     } else {
       this.setState({ errorMessage: "Invalid username or password" });
     }
@@ -39,62 +38,76 @@ export class Login extends Component {
   render() {
     return (
       <div>
-        <h2 class = "text-center">Login</h2>
+        <h2 className = "text-center">Login</h2>
           <Form>
             <Row className="justify-content-center">
           <Col xs={5}>
           <Card >
           <Card.Body>
             {/* Email input */}
-          <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">Email address</label>
+          <div className="form-outline mb-4">
+            <input type="email" id="form2Example1" className="form-control" value={this.state.username} onChange={this.handleUsernameChange}/>
+            <label className="form-label" htmlFor="form2Example1">Email address</label>
           </div>
           
 
           {/* Password input */}
-          <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Password</label>
+          <div className="form-outline mb-4">
+            <input 
+              type="password" 
+              id="form2Example2" 
+              className="form-control" 
+              value={this.state.password} 
+              onChange={this.handlePasswordChange}/>
+            <label 
+              className="form-label" 
+              htmlFor="form2Example2">
+              Password
+            </label>
           </div>
 
-          {/* 2 column grid layout for inline styling */}
-          <div class="row mb-4">
-            <div class="col d-flex justify-content-center">
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
               {/* Checkbox */}
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                <label class="form-check-label" for="form2Example31"> Remember me </label>
+              <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="form2Example31" defaultChecked />
+                <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
               </div>
             </div>
 
-            <div class="col">
+            <div className="col">
               {/* Simple link */}
               <a href="#!">Forgot password?</a>
             </div>
           </div>
 
            {/* Submit button */}
-          <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+          <button 
+            type="button" 
+            className="btn btn-primary btn-block mb-4" 
+            onClick={this.handleSubmit}
+          >
+            Sign in
+          </button>
 
           {/* Register buttons */}
-          <div class="text-center">
+          <div className="text-center">
             <p>Not a member? <a href="#!">Register</a></p>
             <p>or sign up with:</p>
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-facebook-f"></i>
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-facebook-f"></i>
             </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-google"></i>
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-google"></i>
             </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-twitter"></i>
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-twitter"></i>
             </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fab fa-github"></i>
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-github"></i>
             </button>
           </div>
           </Card.Body>
@@ -102,6 +115,7 @@ export class Login extends Component {
           </Col>
           </Row>
         </Form>
+
         {/* <form onSubmit={this.handleSubmit}>
           <label>
             Username:
@@ -124,8 +138,7 @@ export class Login extends Component {
           <button type="submit">Login</button>
           {this.state.errorMessage && <p>{this.state.errorMessage}</p>}
         </form> */}
-      </div>
-
+    </div>
     );
   }
 }

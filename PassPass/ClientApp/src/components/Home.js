@@ -9,7 +9,7 @@ export class Home extends Component {
       <div className='mt-5' style={{ textAlign: 'center' }}>
         <div style={{ fontSize: '62px', textAlign: 'center' }}>
           <h1 className='display-1 text-center'> PassPass </h1>
-          <h2 className='display-3 d-flex align-items-center justify-content-center'>Secure, convinient and easy to use!</h2>
+          <h2 className='display-3 d-flex align-items-center justify-content-center'>Secure, convenient and easy to use!</h2>
         </div>
         <a className='mt-5 btn btn-secondary btn-lg' href="/about">Learn more</a>
         
