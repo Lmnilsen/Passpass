@@ -11,8 +11,7 @@ export class NavMenu extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true,
-      isLoggedIn: false
+      collapsed: true
     };
   }
 
@@ -20,18 +19,6 @@ export class NavMenu extends Component {
     this.setState({
       collapsed: !this.state.collapsed
     });
-  }
-
-  updateLoginStatus = (newValue) => {
-    this.setState({ isLoggedIn: newValue });
-  };
-
-  static loggedIn(){
-    if (! this.isLoggedIn) {
-      return (
-      <NavLink tag={Link} className="text-dark fs-4" to="/login">Login</NavLink>
-      )
-    }
   }
 
   render() {
@@ -56,9 +43,9 @@ export class NavMenu extends Component {
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
-                {NavMenu.loggedIn()}
-                {/* <NavLink tag={Link} className="text-dark fs-4" to="/login">Login</NavLink> */}
+                <NavLink tag={Link} className="text-dark fs-4" to="/login">Login</NavLink>
               </NavItem>
+              
             </ul>
           </Collapse>
         </Navbar>

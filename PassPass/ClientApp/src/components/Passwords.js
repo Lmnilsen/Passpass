@@ -5,7 +5,7 @@ export class Passwords extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { passwords: [], loading2: true, isLoggedIn: false };
+    this.state = { passwords: [], loading2: true };
     this.deletePassword = this.deletePassword.bind(this);
   }
 
@@ -15,7 +15,6 @@ export class Passwords extends Component {
   
   static renderPasswordsTable(passwords, deletePassword) {
     return (
-    <div>
       <table className='table table-striped' aria-labelledby="tabelLabe2">
         <thead>
           <tr>
@@ -36,18 +35,9 @@ export class Passwords extends Component {
                 <button type="button" onClick={() => deletePassword(password.id)}>Delete</button>
               </td>
             </tr>
-            )}
-          </tbody>
-        </table>
-
-        <div className='mt-5'/>
-        <form id="myForm" onSubmit={this.handleSubmit}>
-          Website: <input type="text" name="website" style={{marginRight: '20px'}}  required></input>
-          Website Username: <input type="text" name="username" style={{marginRight: '20px'}} required></input>
-          Password: <input type="text" id="password" required></input>
-          <button type="submit">Submit</button>
-        </form> 
-      </div>
+          )}
+        </tbody>
+      </table>
     );
   }
 
@@ -88,39 +78,25 @@ export class Passwords extends Component {
   }
 
   render() {
-    const { loading2, passwords } = this.state;
-    const { isLoggedIn } = this.props;
-
-    let contents2;
-    if (! isLoggedIn){
-      contents2 = (
-        <div>
-          <p>Please login to access the password site.</p>
-          {/* <form id="loginForm" onSubmit={this.handleSubmit}>
-            Username: <input type="text" name="username" style={{ marginRight: '20px' }} required></input>
-            Password: <input type="password" name="password" required></input>
-            <button type="submit">Login</button>
-          </form> */}
-        </div>
-      );
-    }
-    else if (loading2) {
-      contents2 = <p><em>Loading...</em></p>;
-    }
-
-    else if (isLoggedIn) {
-      contents2 = (
-        <div>
-          <p>An overview of the stored passwords.</p>
-          {Passwords.renderPasswordsTable(passwords, this.deletePassword)}
-        </div>
-      );
-    }
+    let contents2 = this.state.loading2
+      ? <p><em>Loading...</em></p>
+      : Passwords.renderPasswordsTable(this.state.passwords, this.deletePassword);  
 
     return (
       <div>
         <h1 id="tabe2Label">Passwords</h1>
+        <p>An overview of the stored passwords.</p>
         {contents2}
+
+        <div className='mt-5'/>
+
+        <form id="myForm" onSubmit={this.handleSubmit}>
+          Website: <input type="text" name="website" style={{marginRight: '20px'}}  required></input>
+          Website Username: <input type="text" name="username" style={{marginRight: '20px'}} required></input>
+          Password: <input type="text" id="password" required></input>
+          <button type="submit">Submit</button>
+          {/* <button type="submit" onclick="DesperateTest()" >Submit</button> */}
+        </form> 
       </div>
     );
   }

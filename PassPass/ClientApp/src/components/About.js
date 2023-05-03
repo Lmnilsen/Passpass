@@ -19,7 +19,7 @@ export class About extends Component {
     return (
       <div>
         <h1 className='display-3 mt-5'> About PassPass: </h1>
-        <p style={{ fontSize: '20px' }}><br/> Protect your online accounts with our password manager! <br></br>
+        <p><br></br> Protect your online accounts with our password manager! <br></br>
         With the increasing number of online services and the growing threat of data breaches, 
         having strong and unique passwords for each account has become essential.<br></br>
         Our password manager offers a reliable and convenient solution to generate, 
@@ -27,6 +27,13 @@ export class About extends Component {
         Join us in creating a safer online environment for everyone.
 
         </p>
+        {/* <h1>Counter</h1>
+
+        <p>This is a simple example of a React component.</p>
+
+        <p aria-live="polite">Current count: <strong>{this.state.currentCount}</strong></p>
+
+        <button className="btn btn-primary" onClick={this.incrementCounter}>Increment</button> */}
       </div>
     );
   }

@@ -7,39 +7,13 @@ import './custom.css';
 export default class App extends Component {
   static displayName = App.name;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: false
-    };
-
-    this.updateLoginStatus = this.updateLoginStatus.bind(this);
-  }
-
-  updateLoginStatus = (isLoggedIn) => {
-    console.log("Her" + isLoggedIn);
-    this.setState({ isLoggedIn });
-    this.props.history.push('/passwords');
-  }
-
   render() {
-    const { isLoggedIn } = this.state;
-
     return (
       <Layout>
         <Routes>
           {AppRoutes.map((route, index) => {
-            const { path, element } = route;
-            return (
-              <Route
-                key={index}
-                path={path}
-                element={React.cloneElement(element, {
-                  isLoggedIn,
-                  updateLoginStatus: this.updateLoginStatus
-                })}
-              />
-            );
+            const { element, ...rest } = route;
+            return <Route key={index} {...rest} element={element} />;
           })}
         </Routes>
       </Layout>
