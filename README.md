@@ -55,7 +55,9 @@ https://github.com/Lmnilsen/Passpass/blob/main/mockups/PasswordPage.png
 * Connected server to app
 * Set up password collection
 * Set up temporary password table
-* Next: Work on resolving Mongo connection issues
+* Changed app to use local Mongodb instance
+* Removed unused MongoDB collection and files
+* Wrote installation guide
 
 ### Kirsten-Elise Rensaa
 * Create README file
